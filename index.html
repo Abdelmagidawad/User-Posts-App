@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User | Posts App</title>
+    <!-- Logo -->
+    <link rel="shortcut icon" href="image/Logo.png" type="image/x-icon" />
+    <!-- Main File Css  -->
+    <link rel="stylesheet" href="mainStyle.css" />
+    <!-- FontAwesome Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-head">
+      <img src="image/Logo.png" alt="Logo" />
+      <h1>User Posts App</h1>
+    </div>
+    <div class="container">
+      <div class="sec-users">
+        <div class="con-head">
+          <div class="head-sec-u">
+            <i class="fa-solid fa-users"></i>
+            <h2>Users</h2>
+          </div>
+          <button type="button">Get Users</button>
+        </div>
+
+        <div class="users-list">
+          <!-- No Users First  -->
+          <div class="no-data">
+            <i class="fa-solid fa-user"></i>
+            <p class="error-msg">There is no Users</p>
+          </div>
+        </div>
+      </div>
+      <div class="sec-posts">
+        <div class="head-sec-p">
+          <i class="fa-solid fa-user"></i>
+          <h2>Select a User</h2>
+        </div>
+        <div class="posts-list">
+          <!-- No Posts First  -->
+          <div class="no-data">
+            <i class="fas fa-user"></i> <i class="fas fa-message"></i>
+            <p class="error-msg">There is no Posts</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,252 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add scroll */
+*::-webkit-scrollbar {
+  width: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  box-shadow: 0 0 7px 1px #eef0f2 inset;
+  background-color: #ddd;
+  display: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #246cfda3;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #3055cb;
+}
+
+body {
+  background-color: #f3f4f6;
+  font-family: "Cairo", sans-serif;
+  padding: 30px;
+}
+
+.main-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  gap: 10px;
+
+  img {
+    width: 40px;
+    animation: logo-anime 1.5s infinite ease-in-out;
+  }
+  h1 {
+    font-size: 2rem;
+    color: #1f2937;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  max-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  gap: 25px;
+
+  .sec-users,
+  .sec-posts {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    padding-top: 0px;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.1);
+
+    & .head-sec-u,
+    .head-sec-p {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: sticky;
+      top: 0px;
+      left: 0px;
+      margin: 0 -7px;
+      padding-top: 20px;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      background-color: #fff;
+      border-bottom: #e5e7eb 2px solid;
+      i {
+        color: #246bfd;
+        font-size: 20px;
+      }
+      h2 {
+        font-size: 1.5rem;
+        color: #1f2937;
+      }
+    }
+  }
+
+  .sec-users {
+    width: 30%;
+    overflow-y: scroll;
+    .con-head {
+      position: sticky;
+      top: 0px;
+      left: 0px;
+      z-index: 5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: #e5e7eb 2px solid;
+      background-color: #fff;
+      margin: 0 -12px;
+      .head-sec-u {
+        border-bottom: transparent;
+        margin-bottom: 0;
+      }
+      button {
+        background-color: #fff;
+        border: #e5e7eb 2px solid;
+        font-weight: bold;
+        font-size: 14px;
+        outline: none;
+        padding: 7px;
+        border-radius: 7px;
+        margin-top: 10px;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background-color: #246bfd;
+          color: #fff;
+          border-color: #246bfd;
+        }
+      }
+    }
+
+    .user {
+      padding: 0 8px;
+      border-radius: 5px;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+      box-shadow: 0 0px 3px rgba(0, 0, 0, 0.1);
+      .name-auth {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        i {
+          color: #246bfd;
+        }
+        h3 {
+          color: #7d7987;
+        }
+      }
+      p {
+        margin: -6px 0 0 30px;
+        margin-top: -6px;
+        color: #4f535a;
+        font-weight: bold;
+        font-size: 15px;
+      }
+      &:hover {
+        background-color: #f1f5f9;
+        transform: scale(1.03);
+      }
+      &.selected {
+        background-color: #dbeafe;
+        transform: scale(1.03);
+      }
+    }
+  }
+
+  .sec-posts {
+    width: 70%;
+    overflow-y: scroll;
+
+    .post {
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      background-color: #f3f4f6;
+
+      .title {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding-bottom: 7px;
+        margin-bottom: 7px;
+        border-bottom: #e5e7eb 2px solid;
+        i {
+          color: #246bfd;
+        }
+        h3 {
+          color: #6b4444;
+        }
+      }
+      p {
+        font-size: 15px;
+        font-weight: bold;
+        color: #4f535a;
+      }
+    }
+  }
+}
+
+.sec-posts,
+.sec-users {
+  .no-data,
+  .no-users {
+    text-align: center;
+    margin: 10em 0px 5em 0px;
+    i {
+      font-size: 40px;
+      color: #246bfd;
+      animation: no-anime 1.5s ease-in-out infinite;
+    }
+    .error-msg {
+      margin: 10px 0;
+      font-size: 20px;
+      font-weight: bold;
+      color: #7d7987;
+    }
+  }
+}
+
+@keyframes logo-anime {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes no-anime {
+  0% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}
+
+@media (width<=900px) {
+  .container {
+    max-height: 200vh;
+    flex-direction: column;
+    .sec-users,
+    .sec-posts {
+      width: 100%;
+    }
+  }
+}
