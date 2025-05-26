@@ -1,4 +1,6 @@
-async function getPosts(userId) {
+import { postsUser } from "./module.js";
+
+export async function getPosts(userId) {
   let secPosts = document.querySelector(".posts-list");
 
   try {
@@ -67,21 +69,4 @@ btnGetUsers.addEventListener("click", () => {
   getUsers();
 });
 
-function postsUser(users) {
-  users.forEach((user) => {
-    let id = user.getAttribute("userId");
-    let name = user.getAttribute("userName");
-
-    user.addEventListener("click", () => {
-      getPosts(id);
-      //
-      let coinName = document.querySelector(".head-sec-p h2");
-      coinName.innerHTML = name;
-      users.forEach((user) => {
-        user.classList.remove("selected");
-      });
-      user.classList.add("selected");
-      //
-    });
-  });
-}
+postsUser(users);
